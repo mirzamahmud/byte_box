@@ -37,17 +37,20 @@ class OnboardController extends GetxController{
   final PageController pageController = PageController();
   int currentIndex = 0;
 
+  // change page_view pages
   void changePages(int index) {
     currentIndex = index;
     update();
   }
 
+  // change pages through dot_indicators
   void changeIndicators(int index){
     currentIndex = index;
     pageController.jumpToPage(index);
     update();
   }
 
+  // change pages through next_button
   void nextPage() {
     if(currentIndex == 3){
       gotoNextScreen();
@@ -60,6 +63,7 @@ class OnboardController extends GetxController{
     update();
   }
 
+  // next screen
   void gotoNextScreen() {
     Get.offAndToNamed(AppRouteName.signInScreen);
   }
